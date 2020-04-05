@@ -30,6 +30,12 @@
       :title= background
       :method= backgroundMethod
       />
+      <Button
+      class='button'
+      :color= blue
+      :title= background
+      :method= brMethod
+      />
     </div>
     <div class="json">
       <json />
@@ -58,7 +64,8 @@ export default {
       background: 'change background',
       backgroundMethod: 'chanheBackground',
       colorMethod: 'changeColor',
-      fontMethod: 'changeFont'
+      fontMethod: 'changeFont',
+      brMethod: 'addBreake'
     }
   },
   computed: {

@@ -1,19 +1,7 @@
 # redentu-project
 
-## Project setup
-```
-npm install
-```
+in project I used: vue,vuex,vuetify.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+I created three components: home, button,json.
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Json you can see on display and in console.

@@ -32,14 +32,6 @@ export default new Vuex.Store({
       state.smallFont = payload
     }
   },
-  actions: {
-    SET_PINK: (context,payload) => {
-      context.commit('set_pink', payload)
-    },
-    SET_YELLOW: (context,payload) => {
-      context.commit('set_yellow', payload)
-    }
-  },
   getters: {
     pink: state => state.pink,
     yellow: state => state.yellow,

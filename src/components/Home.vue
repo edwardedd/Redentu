@@ -1,16 +1,11 @@
 <template>
-  <v-app>
-    <div class="relative-position cursor_normal none_outline"
-     style="color: rgb(255, 255, 255); opacity: 1; border-radius: 6px; transform: rotate(0deg); border: 0px solid rgb(70, 144, 247); padding: 10px; text-align: center; letter-spacing: 0px; font-size: 32px; font-family: Aleo; font-weight: 300; text-decoration: none; box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px; text-transform: initial; font-style: normal; z-index: 2002; text-shadow: rgba(0, 0, 0, 0.2) 2px 2px 0px; line-height: 1.5em;"
-     spellcheck="false">
-      <span style="padding-left:3px; padding-right: 3px; border-radius: 4px;" 
-      :style="{'background-color': this.pink, 'color':this.colorFirst, 'font-size':this.smallFont}">Hi</span>
-        <br/>
-        <span class='text' style=" padding-left:3px; padding-right: 3px; border-radius: 4px;" 
-        :style="{'background-color': this.pink, 'color':this.colorFirst,'font-size':this.smallFont}">My lovely</span>
-        <span style="color: rgb(136, 14, 79)" :style="{'font-size':this.bigFont}">little</span>
-      <span :style="{'background-color': this.yellow, 'color':this.colorSecond, 'font-size':this.smallFont}">Ponny</span>
-    </div>
+  <v-app class="home-wrapper">
+    <p class="input-wrapper">
+      <input v-model="message" placeholder="введіть текст">
+      <div class='text'>
+        {{message}}
+      </div>
+    </p>
     <div class='buttons'>
       <Button
       class='button'
@@ -65,7 +60,8 @@ export default {
       backgroundMethod: 'chanheBackground',
       colorMethod: 'changeColor',
       fontMethod: 'changeFont',
-      brMethod: 'addBreake'
+      brMethod: 'addBreake',
+      message: ''
     }
   },
   computed: {
@@ -85,6 +81,26 @@ export default {
  .json{
    display: flex;
    justify-content: center;
+ }
+ .home-wrapper{
+   width: 100%;
+   height: 15%;
+   display: flex;
+   justify-content: center;
+ }
+ .input-wrapper{
+   width: 100vw;
+   display: flex;
+ }
+ input{
+   margin: auto;
+ }
+ .text{
+   margin: auto;
+ }
+ .json{
+   width: 18%;
+    margin: auto;
  }
 </style>
 

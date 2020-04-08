@@ -15,66 +15,76 @@ export default {
   data: function() {
     return{
       brakeVal: false,
-      breakeTitle: 'Add line brake'
+      breakeTitle: 'Add line brake',
+      mainArray: []
     }
   },
   computed: {
-    ...mapGetters(['pink', 'yellow', 'colorFirst', 'colorSecond', 'bigFont', 'smallFont'])
+    ...mapGetters(['JSON', 'yellow', 'colorFirst', 'colorSecond', 'bigFont', 'smallFont'])
   },
   methods: {
     chanheBackground () {
-      if(this.pink==='pink'){
-        this.$store.commit('set_pink', 'yellow')
-      }else if(this.pink==='yellow'){
-        this.$store.commit('set_pink', 'pink')
+      let selectedText = window.getSelection()
+      let range = selectedText.getRangeAt(0);
+      let newNode = document.createElement("span");
+      newNode.setAttribute("style", "background-color: red;");
+      range.surroundContents(newNode);
+      let array = {
+        'text': `${range.toString()}`,
+        'font-size': '15px',
+        'color':'purple',
+        'background-color':'red'
       };
-      if(this.yellow==='yellow'){
-        this.$store.commit('set_yellow', 'pink')
-      }else if(this.yellow==='pink'){
-        this.$store.commit('set_yellow', 'yellow')
-      };
-      let a = document.getElementsByTagName('span')[1]
-      a.innerHTML='My lovely <br/>'
+      this.mainArray.push(array)
+      this.$store.commit('set_JSON',this.mainArray)
+      console.log('111', this.mainArray)
     },
     changeColor() {
-      if(this.colorFirst==='purple'){
-        this.$store.commit('set_colorFirst','white') 
-      }else if(this.colorFirst==='white'){
-        this.$store.commit('set_colorFirst','purple')
+      let selectedText = window.getSelection()
+      let range = selectedText.getRangeAt(0);
+      let newNode = document.createElement("span");
+      newNode.setAttribute("style", "color: purple;");
+      range.surroundContents(newNode);
+      let array = {
+        'text': `${range.toString()}`,
+        'font-size': '15px',
+        'color':'purple',
+        'background-color':'white'
       };
-      if(this.colorSecond==='white'){
-        this.$store.commit('set_colorSecond','purple') 
-      }else if( this.colorSecond==='purple'){
-        this.$store.commit('set_colorSecond','white') 
-      }
-      
+      this.mainArray.push(array)
+      this.$store.commit('set_JSON',this.mainArray)
     },
     fontMethod() {
-      if(this.bigFont==='54px'){
-        this.$store.commit('set_bigFont','34px')
-      }else if(this.bigFont==='34px'){
-        this.$store.commit('set_bigFont','54px')
+      let selectedText = window.getSelection()
+      let range = selectedText.getRangeAt(0);
+      let newNode = document.createElement("span");
+      newNode.setAttribute("style", "font-size: 25px;");
+      range.surroundContents(newNode)
+      let array = {
+        'text': `${range.toString()}`,
+        'font-size': '25px',
+        'color':'black',
+        'background-color':'white'
       };
-      if(this.smallFont==='34px'){
-        this.$store.commit('set_smallFont','54px')
-      }else if(this.smallFont==='54px'){
-        this.$store.commit('set_smallFont','34px')
-      }
+      this.mainArray.push(array)
+      this.$store.commit('set_JSON',this.mainArray)
     },
     addBreake() {
-      if(this.brakeVal===false){
-        let a = document.getElementsByTagName('span')[1]
-        a.innerHTML='My lovely <br/>'
-        this.brakeVal = true,
-        this.breakeTitle = 'Remove line brake'
-      } else if(this.brakeVal===true){
-        let a = document.getElementsByTagName('span')[1]
-        a.innerHTML='My lovely',
-        this.brakeVal = false,
-        this.breakeTitle = 'Add line brake'
-      }
       
+      let selectedText = window.getSelection()
+      let range = selectedText.getRangeAt(0);
+
+      let newNode = document.createElement("span");
+      // newNode.setAttribute("style", "background-color: pink;");
+      console.log(this.JSON)
+      let newEle = document.createElement('br')
+      newNode.innerHTML = `${range.toString()}+<br>`
+      range.insertNode(newEle);
+
+    
+        
     }
   }
 }
 </script>
+

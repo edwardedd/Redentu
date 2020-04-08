@@ -1,8 +1,6 @@
 <template>
   <v-app>
-    <p>{<br>{<br>tekst:"my lovely"; <br>color:"{{this.colorFirst}}"; <br>font: "{{this.smallFont}}"; <br> bacground-color: "{{this.pink}}"<br>}, </p>
-    <p>{<br>tekst:"little"; <br>color:"purple"; <br>font: "{{this.bigFont}}"; <br> bacground-color: "white"<br>}, </p>
-    <p>{<br>tekst:"Ponny"; <br>color:"{{this.colorSecond}}"; <br>font: "{{this.smallFont}}"; <br> bacground-color: "{{this.yellow}}"<br>}<br>}</p>
+    {{this.JSON}}
   </v-app>
 </template>
 
@@ -20,7 +18,7 @@ export default {
     console.log(this.json)
   },
   computed: {
-    ...mapGetters(['pink', 'yellow', 'colorFirst', 'colorSecond', 'bigFont', 'smallFont']),
+    ...mapGetters(['JSON']),
   
       // addItems()
   

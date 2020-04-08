@@ -15,7 +15,7 @@ export default new Vuex.Store({
   },
   mutations: {
     set_JSON: (state,payload) => {
-      state.JSON = payload
+      state.JSON.unshift(payload)
     }
   },
   getters: {

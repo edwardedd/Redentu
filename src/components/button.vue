@@ -37,7 +37,6 @@ export default {
       };
       this.mainArray.push(array)
       this.$store.commit('set_JSON',this.mainArray)
-      console.log('111', this.mainArray)
     },
     changeColor() {
       let selectedText = window.getSelection()
@@ -75,8 +74,6 @@ export default {
       let range = selectedText.getRangeAt(0);
 
       let newNode = document.createElement("span");
-      // newNode.setAttribute("style", "background-color: pink;");
-      console.log(this.JSON)
       let newEle = document.createElement('br')
       newNode.innerHTML = `${range.toString()}+<br>`
       range.insertNode(newEle);

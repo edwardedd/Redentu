@@ -1,7 +1,12 @@
 <template>
   <v-app class="home-wrapper">
     <div class="input-wrapper">
-      <input v-model="message" placeholder="введіть текст">
+      <v-text-field
+        class="input"
+        v-model="message"
+        placeholder="введіть текст"
+        outlined
+      ></v-text-field>
       <div class='text'>
         {{message}}
       </div>
@@ -91,9 +96,13 @@ export default {
  .input-wrapper{
    width: 100vw;
    display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
  }
- input{
+ .input{
    margin: auto;
+   width: 20%;
  }
  .text{
    margin: auto;

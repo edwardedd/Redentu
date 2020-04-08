@@ -1,11 +1,11 @@
 <template>
   <v-app class="home-wrapper">
-    <p class="input-wrapper">
+    <div class="input-wrapper">
       <input v-model="message" placeholder="введіть текст">
       <div class='text'>
         {{message}}
       </div>
-    </p>
+    </div>
     <div class='buttons'>
       <Button
       class='button'
